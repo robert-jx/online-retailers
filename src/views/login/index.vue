@@ -3,8 +3,7 @@
         <section class="box">
             <section class="title">登 录</section>
             <section class="form">
-
-                <el-form :model="form" label-width="" :rules="rules">
+                <el-form ref="ruleFormRef" :model="form" label-width="" :rules="rules">
                     <el-form-item label="" prop="username" class="form-line">
                         <el-input v-model="form.username" placeholder="账号/手机/邮箱" />
                     </el-form-item>
@@ -26,20 +25,23 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, reactive, toRefs, ref } from 'vue'
+import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
+import { ElMessage } from 'element-plus'
+import { useRouter } from 'vue-router'
 
 const formSize = ref('default')
 const ruleFormRef = ref<FormInstance>()
-const form = {
+const form = reactive({
     username: '',
     password: '',
     remember: ''
-}
-const rules = {
+})
+
+const rules = reactive<FormRules>({
     username: [
         { required: true, message: '请输入账号/手机/邮箱', trigger: 'blur' },
-        { min: 3, max: 10, message: '账号长度在3到10之间', trigger: 'blur' },
+        { min: 3, max: 25, message: '长度应在3到25字符之间', trigger: 'blur' },
     ],
     password: [
         {
@@ -47,13 +49,33 @@ const rules = {
             message: '请输入密码',
             trigger: 'blur',
         },
-        { min: 3, max: 10, message: '密码长度在3到10之间', trigger: 'blur' },
     ],
-}
-const submitForm = () => {
-    console.log(123);
+})
 
+const router = useRouter();
+const submitForm = async (formEl: FormInstance | undefined) => {
+    if (!formEl) return
+    await formEl.validate((valid, fields) => {
+        if (valid) {
+            console.log('登录成功')
+            //调用接口
+            //登录成功
+            ElMessage({
+                message: '登录成功.',
+                type: 'success',
+            })
+            // 跳转路由
+            router.push('/')
+        } else {
+            console.log('登录失败!', fields)
+            ElMessage({
+                message: '登录失败.',
+                type: 'error',
+            })
+        }
+    })
 }
+
 
 </script>
 
