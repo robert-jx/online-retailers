@@ -7,6 +7,8 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // 引入自定义样式变量
 import '@/assets/css/common.scss'
+// 引入动画库
+import "animate.css"
 
 const app: any = createApp(App)
 app.use(store).use(router).use(ElementPlus).mount('#app')

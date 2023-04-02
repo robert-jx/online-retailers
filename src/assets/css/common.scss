@@ -1,3 +1,16 @@
 :root {
     --title-color: #40454B;
+
+    --border-color: lightgray;
+}
+
+// 统一menu
+.el-menu {
+    border-right: none;
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding-left: 0;
+    background-color: var(--el-menu-bg-color);
+    box-sizing: border-box;
 }
