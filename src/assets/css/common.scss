@@ -1,4 +1,8 @@
 :root {
+    --normal-blue: #324157;
+    --normal-black: #373d41;
+    --normal-white: #fff;
+
     --title-color: #40454B;
 
     --border-color: lightgray;
@@ -11,6 +15,31 @@
     position: relative;
     margin: 0;
     padding-left: 0;
-    background-color: var(--el-menu-bg-color);
+    background-color: var(--normal-blue);
     box-sizing: border-box;
+    color: var(--normal-white);
+
+    .el-sub-menu {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        color: var(--normal-white);
+    }
+
+    .el-sub-menu__title {
+        display: flex;
+        align-items: center;
+        height: var(--el-menu-item-height);
+        line-height: var(--el-menu-item-height);
+        font-size: var(--el-menu-item-font-size);
+        color: var(--normal-white);
+        padding: 0 var(--el-menu-base-level-padding);
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+        transition: border-color var(--el-transition-duration), background-color var(--el-transition-duration), color var(--el-transition-duration);
+        box-sizing: border-box;
+        white-space: nowrap;
+        padding-right: calc(var(--el-menu-base-level-padding) + var(--el-menu-icon-width));
+    }
 }

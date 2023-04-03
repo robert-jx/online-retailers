@@ -60,5 +60,6 @@ const handleClose = (key: string, keyPath: string[]) => {
 .sidebar {
     width: 100%;
     height: 100%;
+    background-color: var(--normal-blue);
 }
 </style>

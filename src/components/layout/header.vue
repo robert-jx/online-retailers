@@ -47,8 +47,10 @@ let isSideBar = computed({
     padding: 0 25px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--border-color);
+    // border-bottom: 1px solid var(--border-color);
     box-sizing: border-box;
+    background-color: var(--normal-black);
+    color: var(--normal-white);
 
     .logo {
         // width: 120px;
