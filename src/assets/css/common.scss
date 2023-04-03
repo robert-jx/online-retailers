@@ -47,6 +47,11 @@
         white-space: nowrap;
         padding-right: calc(var(--el-menu-base-level-padding) + var(--el-menu-icon-width));
     }
+
+    .el-sub-menu__title:hover {
+        background-color: var(--hover-blue);
+        color: var(--normal-white);
+    }
 }
 
 
