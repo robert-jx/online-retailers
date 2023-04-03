@@ -1,7 +1,12 @@
 :root {
-    --normal-blue: #324157;
-    --normal-black: #373d41;
+    --normal-black: #363d40;
+
+    --normal-blue: #313743;
+    --hover-blue: #3a4458;
+    --click-blue: #2e4166;
+
     --normal-white: #fff;
+    --click-white: #999;
 
     --title-color: #40454B;
 
@@ -42,4 +47,22 @@
         white-space: nowrap;
         padding-right: calc(var(--el-menu-base-level-padding) + var(--el-menu-icon-width));
     }
+}
+
+
+.el-sub-menu .el-menu-item {
+    height: var(--el-menu-sub-item-height);
+    line-height: var(--el-menu-sub-item-height);
+    background-color: var(--normal-blue);
+    color: var(--normal-white);
+}
+
+.el-menu-item.is-active {
+    color: var(--normal-white);
+    background-color: var(--click-blue);
+}
+
+.el-menu-item:hover {
+    color: var(--normal-white);
+    background-color: var(--hover-blue);
 }

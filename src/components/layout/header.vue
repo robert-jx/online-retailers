@@ -1,6 +1,7 @@
 <template>
     <section class="header">
         <section class="logo">
+            <img :src="Logo" alt="">
             电商后台管理系统
         </section>
         <section class="user">
@@ -13,11 +14,16 @@
                     <Expand />
                 </el-icon>
             </section>
+            <section class="head">
+                <img :src="HeadImage" alt="">
+            </section>
         </section>
     </section>
 </template>
 
 <script setup lang="ts">
+import Logo from '@/assets/image/logo/logo.jpg'
+import HeadImage from '@/assets/image/user/head.jpg'
 // 引入图标
 import { Fold, Expand } from '@element-plus/icons-vue';
 import { computed } from 'vue'
@@ -55,20 +61,39 @@ let isSideBar = computed({
     .logo {
         // width: 120px;
         height: 100%;
+        display: flex;
+        align-items: center;
 
         img {
 
-            width: 120px;
-            height: 100%;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 15px 0 0;
         }
     }
 
     .user {
         width: 200px;
         height: 100%;
+        display: flex;
+        align-items: center;
 
         .side-bar {
             cursor: pointer;
+            width: 40px;
+            height: 60px;
+        }
+
+        .head {
+            height: 100%;
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin: 15px 0
+            }
         }
     }
 }
