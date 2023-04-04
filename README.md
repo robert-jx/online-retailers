@@ -3,3 +3,9 @@
 practical battle of E-commerce background system project
 
 use vue3 and typescript to develop
+
+quick start:
+
+npm install
+
+npm run serve
