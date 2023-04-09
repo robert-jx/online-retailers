@@ -39,13 +39,21 @@
     <el-dialog v-model="dialogVisible" :title="title" width="30%">
         <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" label-width="120px" class="demo-ruleForm"
             :size="formSize" status-icon>
-            <el-form-item label="类型名称" prop="name">
-                <el-input v-model="ruleForm.name" />
+            <el-form-item label="用户名称" prop="name">
+                <el-input v-model="ruleForm.username" />
             </el-form-item>
-            <el-form-item label="类型描述" prop="remark">
+            <el-form-item label="手机号码" prop="name">
+                <el-input v-model="ruleForm.phone" />
+            </el-form-item>
 
+            <el-form-item label="邮箱" prop="name">
+                <el-input v-model="ruleForm.email" />
+            </el-form-item>
+
+            <el-form-item label="描述" prop="name">
                 <el-input v-model="ruleForm.remark" />
             </el-form-item>
+
         </el-form>
         <template #footer>
             <span class="dialog-footer">
@@ -108,6 +116,8 @@ const toEdit = (row: any) => {
     console.log(row.username);
     ruleForm.username = row.username;
     ruleForm.remark = row.remark;
+    ruleForm.phone = row.phone;
+    ruleForm.email = row.email;
     formId = row.id;
     title.value = '修改用户'
     dialogVisible.value = true;
@@ -135,6 +145,8 @@ const ruleFormRef = ref<FormInstance>()
 const ruleForm = reactive({
     username: '',
     remark: '',
+    phone: '',
+    email: ''
 })
 
 const rules = reactive<FormRules>({

@@ -81,12 +81,6 @@ const routes: Array<RouteRecordRaw> = [
         path: '/goods-manage/type',
         name: 'goods-manage-type',
         component: GoodsType
-      },
-      // 商品分类
-      {
-        path: '/goods-manage/commodity',
-        name: 'goods-manage-commodity',
-        component: GoodsCommodity
       }
     ]
   },

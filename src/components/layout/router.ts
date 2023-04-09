@@ -32,8 +32,7 @@ export const menu = [
         path: '/goods-manage',
         children: [
             { name: '商品列表', icon: '', path: '/goods-manage/list' },
-            { name: '分类参数', icon: '', path: '/goods-manage/type' },
-            { name: '商品分类', icon: '', path: '/goods-manage/commodity' },
+            { name: '商品类型', icon: '', path: '/goods-manage/type' }
 
         ]
     },
