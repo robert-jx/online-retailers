@@ -1,11 +1,11 @@
 # online-retailers
 
-practical battle of E-commerce background system project
+Practical battle of E-commerce background system project
 
-use vue3 and typescript to develop
+Use vue3 and typescript to develop
 
-quick start:
+Quick start:
 
-npm install
+1.npm install
 
-npm run serve
+2.npm run serve
