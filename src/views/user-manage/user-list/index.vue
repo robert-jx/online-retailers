@@ -8,6 +8,14 @@
                 </section>
             </section>
             <section class="item">
+                <section class="title">创建日期</section>
+                <section class="item-content">
+
+                    <el-date-picker style="width: 100%;" v-model="createDate" type="daterange" range-separator="To"
+                        start-placeholder="Start date" end-placeholder="End date" size="default" />
+                </section>
+            </section>
+            <section class="item">
                 <el-button type="primary">查询</el-button>
                 <el-button type="success" @click="openAdd">添加</el-button>
             </section>
@@ -72,6 +80,7 @@ import { reactive, ref } from 'vue'
 import { InfoFilled } from '@element-plus/icons-vue'
 import type { FormInstance, FormRules } from 'element-plus'
 let username = ref('')
+let createDate = ref([])
 const tableData = [
     {
         id: '1',
