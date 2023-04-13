@@ -1,6 +1,6 @@
 # online-retailers
 
-Practical battle of E-commerce background system project
+Practical battle of E-commerce background system demo
 
 Use vue3 and typescript to develop
 
